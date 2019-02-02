@@ -17,3 +17,250 @@
 
 // 5 - Import layout  styles
 @import '5-layout/index';
+
+
+$break-large: 2100px;
+$nav-size: 1780px;
+$laptop-size: 1280px;
+$phone-size: 990px;
+
+main {
+    background-color: #003787;
+    background-image: url("../img/bg-section-contacts.png");
+    background-repeat: no-repeat;
+    @media screen and (max-width: $phone-size) {
+        background-color: #FFFFFF;
+        background-image: none;
+    }
+    .block {
+        padding: 90px 0px 90px 0px;
+        .container {
+            @media screen and (max-width: $break-large) {
+                max-width: 1320px;
+            }
+            .row {
+                justify-content: flex-end;
+            }
+            .nav__elem {
+                position: absolute;
+                z-index: 1;
+                left: 15%;
+                top: 13%;
+                max-width: 436px;         
+                div {
+                    margin-right: 24px;
+                    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.13), 0 3px 20px 0px rgba(0, 0, 0, 0.12);
+                    a {
+                        padding: 23px 20px 23px 54px;
+                        color: #333333;	
+                        font-family: "PT Sans";	
+                        font-size: 16px;	
+                        line-height: 20px;
+                        background-color: #F2F2F2;
+                        border-top: 1px solid #FFC101;
+                        border-bottom: none;
+                        border-left: none;
+                        border-right: none;
+                        &:first-child {
+                            border: none;
+                        }
+                        &:last-child {
+                            border-top: 1px solid #FFC101;
+                        }
+                        &:before {
+                            content: " ";
+                            display: inline-block;
+                            width: 7px;
+                            height: 7px;
+                            border-top: 2px solid #003787;
+                            border-right: 2px solid #003787;
+                            transform: rotate(45deg);
+                            left: 26px;
+                            top: 29px;
+                            position: absolute;
+                        }
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            background: #FFC101;
+                            bottom: 0;
+                            left: 0;
+                            right: 100%;
+                            top: 0;
+                            z-index: -1;
+                            -webkit-transition: right 0.3s ease-in;
+                        }
+                        &:hover {
+                            color: #FFFFFF;
+                            &:after{
+                                right: 0;
+                              }
+                        }
+                    }
+                    a.active {
+                        background-color: #FFC101;
+                        color: #FFFFFF;
+                    }
+                }
+                @media screen and (max-width: $nav-size) {
+                    top: 5%;
+                }
+                @media screen and (max-width: $phone-size) {
+                    position: fixed;
+                    z-index: 1;
+                    left: 0;
+                    top: 0;
+                    max-width: 100%;
+                    width: 100%;
+                    padding: 0px;
+                    margin: 0px;
+                    div {
+                        margin: 0px;
+                    }
+                }
+            }
+            .contact__elem {
+                padding: 70px 43px 70px 96px;
+                min-height: 1100px;
+                border-radius: 6px;
+                background-color: #FFFF;
+                .container {
+                    h1 {
+                        color: #003787;	
+                        font-family: "PT Sans";	
+                        font-size: 38px;	
+                        line-height: 49px;
+                    }
+                    p {
+                        color: #333333;	
+                        font-family: "PT Sans";	
+                        font-size: 20px;	
+                        line-height: 26px;
+                        margin: 40px 0px 30px 0px;
+                    }
+                    .row {
+                        display: none;
+                        justify-content: space-evenly;      
+                        position: relative;              
+                        .card {
+                            max-width: 397px;
+                            margin: 0px 0px 20px 0px;
+                            .card-body {
+                                padding: 30px 15px 30px 15px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                ul {
+                                    margin-bottom: 0px;
+                                    li.name__elem {
+                                        color: #003787;	
+                                        font-family: "PT Sans";	
+                                        font-size: 20px;	
+                                        line-height: 26px;
+                                    }
+                                    li.pos__elem {
+                                        color: #333333;	
+                                        font-family: "PT Sans";	
+                                        font-size: 16px;	
+                                        line-height: 26px;
+                                        margin-bottom: 19px;
+                                    }
+                                    li.info__elem {
+                                        color: #333333;	
+                                        font-family: "PT Sans";	
+                                        font-size: 14px;	
+                                        line-height: 19px;
+                                    }
+                                    
+                                }
+                                img {
+                                    width: 96px;
+                                    height: 96px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    }
+                    .row.active {
+                        display: flex;
+                    }
+                }
+                @media screen and (max-width: $phone-size) {
+                    margin-top: 105px;
+                    margin-right: 0px;
+                    padding: 70px 15px 35px 15px;
+                    min-height: auto;
+                    .container {
+                        h1, p {
+                            text-align: center;
+                        }
+                        .row {
+                            .card {
+                                margin: 0px 10px 20px 10px;
+                            }
+                        }
+                    }
+                }
+                @media screen and (max-width: $laptop-size) {
+                    margin-right: 20px;
+                }
+                @media screen and (max-width: $nav-size) {
+                    .container {
+                        h1, p {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        padding: 70px 0px 70px 0px;
+        background-color: #FFFFFF;
+        .container {
+            @media screen and (max-width: $break-large) {
+                max-width: 1320px;
+            }
+            .row {
+                .col-lg-3 {
+                    &:before {
+                        content: " ";
+                        position: absolute;
+                        width: 93.5%;
+                        height: 1px;
+                        top: 33px;
+                        border-bottom: 1px solid #3398DB;
+                        display: block;
+                    }
+                    h3 {
+                        color: #003787;	
+                        font-family: "PT Sans";	
+                        font-size: 20px;	
+                        font-weight: bold;	
+                        line-height: 26px;
+                        padding-bottom: 10px;
+                    }
+                    ul {
+                        margin-top: 20px;
+                        li {
+                            color: #333333;	
+                            font-family: "PT Sans";	
+                            font-size: 16px;	
+                            line-height: 20px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: $phone-size) {
+            .container {
+                .row {
+                    .col-lg-3 {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
